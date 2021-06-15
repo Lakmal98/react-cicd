@@ -26,7 +26,7 @@
         "start:dev4": "env-cmd -f .env.dev4 react-scripts start",
         "start:dev5": "env-cmd -f .env.dev5 react-scripts start",
         "start:dev6": "env-cmd -f .env.dev6 react-scripts start",
-        "build": "react-scripts build",
+        "build": "env-cmd -f .env.release react-scripts build",
         "build:release": "env-cmd -f .env.release react-scripts build",
         "build:test": "env-cmd -f .env.test react-scripts build",
         "build:dev1": "env-cmd -f .env.dev1 react-scripts build",
