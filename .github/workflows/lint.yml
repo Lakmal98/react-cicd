@@ -1,26 +1,26 @@
 name: Lint
 
-on: 
-  push:
-    branches: [ master, release, test ]
-  pull_request:
-    branches: [ master, release, test ]
+on:
+    push:
+        branches: [master, release, test]
+    pull_request:
+        branches: [master, release, test]
 
 jobs:
-  eslint:
-    runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        node-version: [14.x]
-        
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          files: src/
-      
-      - run: npm i
-      - run: npm run lint:fix
+    eslint:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [14.x]
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v2
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  files: src/
+
+            - run: npm i
+            - run: npm run lint:fix
