@@ -28,6 +28,7 @@ jobs:
     - run: npm i
     - run: npm run build
     - run: npm run test
+    - run: cd build/
     
     - name: Deploy to Heroku
       uses: akhileshns/heroku-deploy@v3.12.12
